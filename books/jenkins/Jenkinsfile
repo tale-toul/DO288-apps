@@ -28,7 +28,6 @@ pipeline {
            steps {
                 echo '### Installing NPM dependencies ###'
                sh '''
-//                        npm config set registry ${NEXUS_SERVER}
                         cd books
                         npm install
                    '''
