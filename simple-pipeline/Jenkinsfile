@@ -5,9 +5,9 @@ pipeline {
     }
     agent {
       node {
-        // TODO: run this simple pipeline on jenkins 'master' node
-      }
-    }
+            label 'master'
+          }
+        }
 
     stages {
 
@@ -37,11 +37,6 @@ pipeline {
           }
         }
 
-        agent {
-          node {
-            label 'master'
-          }
-        }
 
         // TODO: ADD AN APPROVAL STAGE
 
