@@ -24,16 +24,16 @@ pipeline {
 
     stages {
 
-//        stage('NPM Install') {
-//           steps {
-//                echo '### Installing NPM dependencies ###'
-//               sh '''
+        stage('NPM Install') {
+           steps {
+                echo '### Installing NPM dependencies ###'
+               sh '''
 //                        npm config set registry ${NEXUS_SERVER}
-//                        cd books
-//                        npm install
-//                   '''
-//            }
-//        }
+                        cd books
+                        npm install
+                   '''
+            }
+        }
 
         stage('Run Unit Tests') {
             steps {
@@ -151,7 +151,7 @@ pipeline {
                         }
                     }
                 }
-                sh 'echo "Deployment to Staging env is complete. Access the app at the URL http://${routeHost}."'
+                echo "Deployment to Staging env is complete. Access the app at the URL http://${routeHost}."
             }
         }
   }
