@@ -61,7 +61,7 @@ pipeline {
                 //TODO: Create a new app and expose the service
                 sh '''
                         oc project ${DEV_PROJECT}
-                        oc new-app --name ${APP_NAME} ${APP_GIT_URL}#custom-pipeline --context-dir ${APP_NAME}
+                        oc new-app --as-deployment-config --name ${APP_NAME} ${APP_GIT_URL}#custom-pipeline --context-dir ${APP_NAME}
                         sleep 5
                         oc expose svc/${APP_NAME}
                    '''
