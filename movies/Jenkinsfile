@@ -87,7 +87,7 @@ pipeline {
                 sh '''
                       oc new-app --as-deployment-config --name ${APP_NAME} -i ${APP_NAME} -n ${DEV_PROJECT}
                       sleep 5
-                      oc expose svc/${APP_NAME}
+                      oc expose svc/${APP_NAME} -n ${DEV_PROJECT}
                 '''
             }
         }
