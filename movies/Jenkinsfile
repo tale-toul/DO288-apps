@@ -142,6 +142,8 @@ pipeline {
                 // TODO: Create a new app in staging and expose the service
                 sh '''
                      oc new-app --as-deployment-config --name ${APP_NAME} -i ${APP_NAME}:stage -n ${STAGE_PROJECT}
+                     sleep 5
+                     oc expose svc/${APP_NAME} -n ${STAGE_PROJECT}
                 '''
             }
         }
